@@ -1,13 +1,15 @@
 FROM python:3.9-slim
 
-WORKDIR /app
+WORKDIR /testTask
 
-COPY requirements.txt .
+COPY requirements.txt /testTask
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY . /testTask
 
 EXPOSE 5001
 
-CMD ["python", "app.py"]
+ENV FLASK_APP=index.py
+
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5001"]
