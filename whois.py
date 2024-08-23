@@ -30,7 +30,7 @@ def extract_whois_model(domain_name: str):
         expiration_date=extract_datetime(fields.get("Дата окончания"))
     )
 
-    return whois_model
+    return {"data": whois_model.to_dict()}
 
 def extract_registrant(data: str):
     fields = {}
