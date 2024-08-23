@@ -6,11 +6,12 @@
 
 - Python 3.9
 - Flask
-- MongoDB (для хранения данных)
-- Docker (для контейнеризации приложения)
+- MongoDB
+- Docker
 
-### Запуск приложения через докер
+## Запуск приложения через Docker
 
+```markdown
 docker build -t whois_test_app .
 
-docker build -t whois_test_app .
+docker run -d -p 5001:5001 whois_test_app
