@@ -25,6 +25,7 @@ def lookup_whois():
     try:
         logging.info(f"Extracting information about {domain_name}")
         result_data = whois.extract_whois_model(domain_name)
+        logging.info(f"Extracted successfully. {result_data} ")
 
         # Сохранение в базу данных
         logging.info(f"Inserting information about {domain_name} into the database")
